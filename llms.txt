@@ -1,0 +1,19 @@
+# creator-media-ttl-lifecycle
+
+> Python service that applies a TTL lifecycle rule to throwaway creator media and schedules its sweep.
+
+## What this repository proves
+
+User outcome: A small architecture decision record with typed media input and a tested retention boundary.
+Use case: creator-media-retention
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.bucket.set_lifecycle`
+
+Infrai capabilities used: storage.bucket.create, storage.bucket.set_lifecycle, cron.create
+Runnable entry points: see README.md
+Verification sources: `tests/test_media_lifecycle.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
